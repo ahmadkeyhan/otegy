@@ -1,6 +1,47 @@
 <template>
   <div>
-    <Nuxt />
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nuxt-link to="/" class="navbar-brand">O.tegy</nuxt-link>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <nuxt-link to="/products" class="nav-link" exact-active-class="active">محصولات</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="/services" class="nav-link" exact-active-class="active">خدمات</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="/projects" class="nav-link" exact-active-class="active">پروژه ها</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="/about" class="nav-link" exact-active-class="active">داستان ما</nuxt-link>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav" v-if="!$auth.loggedIn">
+          <li class="nav-item">
+            <nuxt-link to="/user/login" class="nav-link" exact-active-class="active">ورود</nuxt-link>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav" v-if="$auth.loggedIn">
+          <li class="nav-item">
+            <nuxt-link to="/user/panel" class="nav-link" exact-active-class="active">پنل کاربری</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="/user/logout" class="nav-link" exact-active-class="active">خروج</nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
