@@ -5,8 +5,17 @@
 
     <div class="row">
       <div class="col-md-6">
-        <nuxt-link :to="'/products/' + product._id" v-for="product in products" :key="product._id">
-          <b-card :title="product.title" :img-src="product.url" :img-alt="product.title" img-top style="max-width: 20rem;" class="mb-2">
+        <nuxt-link
+          :to="'/products/' + product._id"
+          v-for="product in products"
+          :key="product._id">
+          <b-card
+            :title="product.title"
+            :img-src="product.url"
+            :img-alt="product.title"
+            img-top
+            style="max-width: 20rem;"
+            class="mb-2">
             <b-card-text>
               {{ product.project }}
             </b-card-text>
@@ -19,10 +28,10 @@
 
 <script>
 export default {
-  async asyncData(context){
-    const {data} = await context.$axios.get('/api/products/type/poster')
+  async asyncData (context) {
+    const { data } = await context.$axios.get('/api/products/type/poster')
     return {
-      products : data
+      products: data
     }
   }
 }

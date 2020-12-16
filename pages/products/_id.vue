@@ -2,7 +2,13 @@
   <div>
     <div class="row">
       <div class="col">
-        <b-card :title="product.title" :sub-title="product.project" :img-src="product.url" :img-alt="product.title" img-top class="mb-2">
+        <b-card
+          :title="product.title"
+          :sub-title="product.project"
+          :img-src="product.url"
+          :img-alt="product.title"
+          img-top
+          class="mb-2">
           <b-card-text>
             {{ product.body }}
           </b-card-text>
@@ -14,10 +20,10 @@
 
 <script>
 export default {
-  async asyncData(context){
-    const {data} = await context.$axios.get('/api/products/' + context.route.params.id)
+  async asyncData (context) {
+    const { data } = await context.$axios.get('/api/products/' + context.route.params.id)
     return {
-      article : data
+      product: data
     }
   }
 }

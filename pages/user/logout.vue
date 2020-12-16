@@ -11,7 +11,7 @@
 export default {
   middleware: 'auth',
 
-  async asyncData(context){
+  async asyncData (context) {
     await context.$auth.logout()
   }
 }

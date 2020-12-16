@@ -38,30 +38,30 @@
 export default {
   middleware: 'auth',
   auth: 'guest',
-  data(){
-    return{
-      errors:null,
-      login_error:null,
-      email:null,
-      password:null,
-      status:false
+  data () {
+    return {
+      errors: null,
+      login_error: null,
+      email: null,
+      password: null,
+      status: false
     }
   },
 
-  methods:{
-    submitForm(){
+  methods: {
+    submitForm () {
       this.$auth.loginWith('local', {
         data: {
           email: this.email,
           password: this.password
         }
       })
-      .catch( (error) => {
-        console.log(error)
-        if(error.response.data.message){
-          this.login_error = error.response.data.message
-        }
-      })
+        .catch((error) => {
+          console.log(error)
+          if (error.response.data.message) {
+            this.login_error = error.response.data.message
+          }
+        })
     }
   }
 }

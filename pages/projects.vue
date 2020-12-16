@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>welcome to otegy</h1>
+    <h1>پروژه ها</h1>
   </div>
 </template>
 
