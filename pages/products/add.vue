@@ -2,7 +2,7 @@
   <div>
     <h1>اضافه کردن محصول</h1>
     <hr>
-    <b-form action="" method="post" @submit.prevent="submitForm()">
+    <b-form action="" method="post" @submit.prevent="submitProduct()">
       <b-form-group
         id="input-group-1"
         label="عنوان"
@@ -97,7 +97,7 @@ export default {
   },
 
   methods: {
-    submitForm () {
+    submitProduct () {
       this.$axios.post('api/products/', {
         title: this.title,
         url: this.url,
@@ -108,7 +108,7 @@ export default {
         .catch((error) => {
           console.log(error)
           if (error.response.data.message) {
-            this.login_error = error.response.data.message
+            this.error = error.response.data.message
           }
         })
     }
