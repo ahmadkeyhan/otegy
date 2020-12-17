@@ -152,6 +152,7 @@ export default {
       title: null,
       role: null,
       fullname: null,
+      phone: null,
       industry: null,
       address: null,
       advantage: null,
@@ -177,7 +178,7 @@ export default {
 
   methods: {
     submitBusiness () {
-      this.$axios.post('api/businesses/', {
+      this.$axios.post('/api/businesses', {
         title: this.title,
         role: this.role,
         fullname: this.fullname,

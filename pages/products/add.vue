@@ -98,7 +98,7 @@ export default {
 
   methods: {
     submitProduct () {
-      this.$axios.post('api/products/', {
+      this.$axios.post('/api/products', {
         title: this.title,
         url: this.url,
         type: this.type,

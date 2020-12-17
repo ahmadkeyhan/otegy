@@ -85,7 +85,7 @@ module.exports.create = [
         target : req.body.target,
         instagram : req.body.instagram,
         website : req.body.website,
-        bestseller : req.body.bestseller,
+        bestseller : req.body.bestseller
     })
 
     // save record
