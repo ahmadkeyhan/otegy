@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>عکاسی ها</h1>
+    <h1>{{ type }}</h1>
     <hr>
 
     <div class="row">
@@ -29,9 +29,10 @@
 <script>
 export default {
   async asyncData (context) {
-    const { data } = await context.$axios.get('/api/products/type/photo')
+    const { data } = await context.$axios.get('/api/products/type/' + context.route.params.type)
     return {
-      products: data
+      products: data,
+      type: context.route.params.type
     }
   }
 }

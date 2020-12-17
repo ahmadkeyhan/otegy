@@ -3,22 +3,27 @@
     <h1>محصولات</h1>
     <hr>
 
-    <div class="row">
-      <div class="col-md-6">
-        <nuxt-link to="/products/posters">
-          پوستر ها
+    <b-row>
+      <b-col v-for="type in types" :key="type.index">
+        <nuxt-link :to="'/products/type/' + type.value">
+          {{ type.text }}
         </nuxt-link>
-      </div>
-      <div class="col-md-6">
-        <nuxt-link to="/products/photos">
-          عکاسی ها
-        </nuxt-link>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
 
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      types: [
+        { text: 'عکس', value: 'photo' },
+        { text: 'ویدیو', value: 'video' },
+        { text: 'پوستر', value: 'poster' }
+      ]
+    }
+  }
+}
 </script>
