@@ -1,0 +1,36 @@
+{
+  "name": "otegy",
+  "version": "1.0.0",
+  "description": "My primo Nuxt.js project",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/proxy": "^2.1.0",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.3",
+    "core-js": "^3.6.5",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^6.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.7",
+    "nuxt": "^2.14.6",
+    "nuxt-material-design-icons": "^1.0.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/google-fonts": "^1.2.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "nodemon": "^1.19.4"
+  }
+}
