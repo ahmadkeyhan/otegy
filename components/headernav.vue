@@ -43,8 +43,8 @@ export default {
 }
 
 #headerBrand {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
   font-kerning: auto;
   font-size: 1.1em;
   color: rgba(255,255,255,0.9);

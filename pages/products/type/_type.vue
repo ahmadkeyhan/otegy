@@ -117,7 +117,7 @@ export default {
 }
 
 .projectBut {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Jost', sans-serif;
   border-radius: 0;
   font-size: 0.9em;
   background-color: #212121;

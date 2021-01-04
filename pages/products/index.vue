@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .productCard {
   border-radius: 4vw;
@@ -73,7 +73,7 @@ export default {
 }
 
 .card-subtitle {
-  font-family: 'Quicksand';
+  font-family: 'Jost', sans-serif;
   font-size: 0.8em;
 
 }
@@ -103,7 +103,7 @@ export default {
 }
 
 .projectBut {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Jost', sans-serif;
   border-radius: 0;
   font-size: 0.9em;
   background-color: #212121;
