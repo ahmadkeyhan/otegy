@@ -14,16 +14,16 @@
       </b-col>
     </b-form-row>
     <b-form-row class="bannerButs">
-      <b-col col="4" md="2">
+      <b-col cols="3">
         <b-button class="bannerButRed" to="/products/type/video">ویدیوگرافی</b-button>
       </b-col>
-      <b-col col="4" md="2">
+      <b-col cols="3">
         <b-button class="bannerButBlue" to="/products/type/poster">پوستر سازی</b-button>
       </b-col>
-      <b-col col="4" md="2">
+      <b-col cols="3">
         <b-button class="bannerButOlive" to="/products/type/visual">هویت بصری</b-button>
       </b-col>
-      <b-col col="4" md="2">
+      <b-col cols="3">
         <b-button class="bannerButYellow" to="/products/type/photo">عکــاسی</b-button>
       </b-col>
     </b-form-row>
@@ -58,9 +58,9 @@ export default {}
   font-weight: 500;
   font-kerning: none;
   border: 1px solid #f5da0f;
-  padding: 0.5em 1.1em;
-  margin-right: auto;
+  padding: 0.5em 1em;
   z-index: 2;
+  float: right;
 }
 
 .bannerButOlive {
@@ -72,7 +72,6 @@ export default {}
   font-kerning: none;
   border: 1px solid #86a82f;
   padding: 0.5em;
-  margin-right: auto;
   z-index: 2;
 }
 
@@ -85,7 +84,6 @@ export default {}
   font-kerning: none;
   border: 1px solid #03989e;
   padding: 0.5em;
-  margin-right: auto;
   z-index: 2;
 }
 
@@ -98,7 +96,6 @@ export default {}
   font-kerning: none;
   border: 1px solid #de4143;
   padding: 0.5em;
-  margin-right: auto;
   z-index: 2;
 }
 

@@ -1,30 +1,24 @@
 <template>
   <b-container dir="rtl">
     <headernav :navtitle="'products.'"></headernav>
-    <b-form-row>
+    <b-row class="productButs">
       <b-col v-for="type in types" :key="type.index">
-        <b-card
-          :img-src="'/' + type.value + '.png'"
-          :img-alt="type.text"
-          img-top
-          class="mt-2 typeCard"
-        >
-          <b-button :to="'/products/type/' + type.value" class="cardBut"><i class="material-icons md-18 cardIcon olive"> {{type.icon}} </i></b-button>
-        </b-card>
+        <b-button :to="'/products/type/' + type.value" :style="{ color: type.color }" class="productBut mt-1 mb-3"><i class="material-icons md-18 productIcon"> {{type.icon}} </i></b-button>
       </b-col>
-    </b-form-row>
+    </b-row>
     <b-form-row>
       <b-col v-for="product in products" :key="product._id" cols="6" md="3">
         <nuxt-link :to="'/products/' + product._id">
           <b-card
             :title="product.title"
+            :sub-title="product.body"
             :img-src="product.url"
             :img-alt="product.title"
             img-top
             class="mt-3 productCard">
             <b-button :to="'/projects/' + product.project" class="projectBut">
               {{ product.project }}
-              <i class="material-icons md-18 projectIcon olive">store</i>
+              <i class="material-icons md-18 projectIcon">store</i>
             </b-button>
           </b-card>
         </nuxt-link>
@@ -38,10 +32,10 @@ export default {
   data () {
     return {
       types: [
-        { text: 'عکاسی', value: 'photo', icon: 'camera' },
-        { text: 'ویدیوگرافی', value: 'video', icon: 'camera' },
-        { text: 'پوستر سازی', value: 'poster', icon: 'create' },
-        { text: 'هویت بصری', value: 'visual', icon: 'fingerprint' }
+        { text: 'ویدیوگرافی', value: 'video', icon: 'camera', color: '#de4143' },
+        { text: 'پوستر سازی', value: 'poster', icon: 'create', color: '#03989e' },
+        { text: 'هویت بصری', value: 'visual', icon: 'fingerprint', color: '#86a82f' },
+        { text: 'عکاسی', value: 'photo', icon: 'camera', color: '#f5da0f' }
       ]
     }
   },
@@ -55,23 +49,33 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 1.5em;
-  color: #f2f2f2;
-  margin: auto;
+
+.productCard {
+  border-radius: 4vw;
+  border: 0;
+  background-color: #212121;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.23);
+  padding-bottom: 2em;
 }
 
-.pageHeader {
-  text-align: center;
-  margin: 2vh 0 1vh 0;
-  border-radius: 4vh;
-  width: 100%;
-  background-color: #262626;
-  height: 8vh;
-  padding-top: 1vh;
+.productCard:hover, .productCard:focus {
+  box-shadow: 0 4.5px 4.5px rgba(0,0,0,0.30);
 }
 
-.cardIcon {
+.card-img-top {
+  border-radius: 4vw 4vw 0 0;
+}
+
+.card-title {
+  color: white;
+  font-size: 1em;
+  margin-top: 0.7em;
+}
+
+.card-subtitle {
+  font-family: 'Quicksand';
+  font-size: 0.8em;
+
 }
 
 .card-body {
@@ -84,25 +88,36 @@ h1 {
   background-color: #212121;
 }
 
-.cardBut {
+.productBut {
   border-radius: 3vh;
-  font-size: 1em;
   background-color: #212121;
   height: 6vh;
   width: 6vh;
   border: 0;
-  box-shadow: 0 4.5px 4.5px rgba(0,0,0,0.23) ;
-  margin-top: -1em;
-  padding: 10px;
+  box-shadow: 0 4.5px 4.5px rgba(0,0,0,0.23);
+  padding: .6em;
 }
 
-.cardBut:hover, .cardBut:focus {
-  background-color: white;
-
+.productBut:hover, .productBut:focus {
+  border: 2px solid #86a82f;
 }
 
-.card-img-top {
+.projectBut {
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 0;
+  font-size: 0.9em;
+  background-color: #212121;
+  height: 6vh;
+  font-weight: 500;
+  font-kerning: none;
+  border-top: 2px solid #86a82f ;
+  margin-top: 0;
+  padding: 0.4em 0.2em 0.2em 0;
 }
 
+.productButs {
+  border-bottom: 2px solid #86a82f;
+  margin: 2vw 1vw;
+}
 
 </style>
