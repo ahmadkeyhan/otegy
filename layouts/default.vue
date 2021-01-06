@@ -14,7 +14,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #212121;
+  background-color: #1c1c1c;
 }
 
 *,

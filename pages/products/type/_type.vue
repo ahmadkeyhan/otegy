@@ -1,7 +1,7 @@
 <template>
   <b-container dir="rtl">
     <headernav :navtitle="type + '.'"></headernav>
-    <b-row class="productButs">
+    <b-row class="typeButs">
       <b-col cols="3">
         <b-button to="/products/" style="{ color: #86a82f }" class="productBut mt-1 mb-3"><i class="material-icons md-18 productIcon">keyboard_arrow_right</i></b-button>
       </b-col>
@@ -14,31 +14,13 @@
         </div>
       </b-col>
     </b-row>
-    <b-form-row>
-      <b-col v-for="product in products" :key="product._id" cols="6" md="3">
-        <nuxt-link :to="'/products/' + product._id">
-          <b-card
-            :title="product.title"
-            :sub-title="product.body"
-            :img-src="product.url"
-            :img-alt="product.title"
-            img-top
-            class="mt-3 productCard">
-            <b-button :to="'/projects/' + product.project" class="projectBut">
-              {{ product.project }}
-              <i class="material-icons md-18 projectIcon">store</i>
-            </b-button>
-          </b-card>
-        </nuxt-link>
-      </b-col>
-    </b-form-row>
+    <typepreview :type="type"></typepreview>
   </b-container>
 </template>
 
 <script>
 export default {
   async asyncData (context) {
-    const { data } = await context.$axios.get('/api/products/type/' + context.route.params.type)
     let type = context.route.params.type
     let icon
     let iconColor
@@ -61,7 +43,6 @@ export default {
       typeHeader = 'عکاسی ها'
     }
     return {
-      products: data,
       type,
       icon,
       iconColor,
@@ -102,7 +83,7 @@ export default {
   border: 2px solid #86a82f;
 }
 
-.productButs {
+.typeButs {
   border-bottom: 2px solid #86a82f;
   margin: 2vw 1vw;
 }

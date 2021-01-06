@@ -3,23 +3,26 @@
     <headernav :navtitle="'products.'"></headernav>
     <b-row class="productButs">
       <b-col v-for="type in types" :key="type.index">
-        <b-button :to="'/products/type/' + type.value" :style="{ color: type.color }" class="productBut mt-1 mb-3"><i class="material-icons md-18 productIcon"> {{type.icon}} </i></b-button>
+        <b-button :to="'/products/type/' + type.value" :style="{ color: type.color }" class="productBut mt-1 mb-3 ml-1"><i class="material-icons md-18 productIcon"> {{type.icon}} </i></b-button>
       </b-col>
     </b-row>
     <b-form-row>
       <b-col v-for="product in products" :key="product._id" cols="6" md="3">
         <nuxt-link :to="'/products/' + product._id">
           <b-card
-            :title="product.title"
-            :sub-title="product.body"
             :img-src="product.url"
             :img-alt="product.title"
             img-top
+            no-body
             class="mt-3 productCard">
-            <b-button :to="'/projects/' + product.project" class="projectBut">
-              {{ product.project }}
-              <i class="material-icons md-18 projectIcon">store</i>
-            </b-button>
+            <b-card-body>
+              <b-card-title> {{ product.title }} </b-card-title>
+              <b-card-sub-title> {{ product.body }} </b-card-sub-title>
+              <b-button :to="'/projects/' + product.project" class="projectBut">
+                {{ product.project }}
+                <i class="material-icons md-18 projectIcon">store</i>
+              </b-button>
+          </b-card-body>
           </b-card>
         </nuxt-link>
       </b-col>
