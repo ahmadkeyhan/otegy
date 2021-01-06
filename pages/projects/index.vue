@@ -58,4 +58,10 @@ export default {
   box-shadow: 0 9px 9px rgba(0,0,0,0.23);
 }
 
+
+.projectIcon {
+  float: left;
+  margin-right: 0.5em;
+}
+
 </style>

@@ -39,7 +39,6 @@ export default {
   border: 0;
   background-color: #212121;
   box-shadow: 0 4.5px 4.5px rgba(0,0,0,0.23) ;
-  min-height: 50vw;
   padding-bottom: 30px;
 }
 
