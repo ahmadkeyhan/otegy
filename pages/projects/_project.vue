@@ -9,7 +9,12 @@
             :img-src="product.url"
             :img-alt="product.title"
             img-top
+            no-body
             class="mt-3 productCard">
+            <b-card-body>
+              <b-card-title> {{ product.title }} </b-card-title>
+              <b-card-sub-title> {{ product.body }} </b-card-sub-title>
+            </b-card-body>
           </b-card>
         </nuxt-link>
       </b-col>

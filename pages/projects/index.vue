@@ -3,9 +3,9 @@
     <headernav :navtitle="'projects.'"></headernav>
     <b-form-row>
       <b-col  v-for="project in projects" :key="project.index" cols="6" md="3">
-        <b-button :to="'/projects/' + project" class="projectBut">
+        <b-button :to="'/projects/' + project" class="projectCard">
           {{ project }}
-          <i class="material-icons md-18 projectIcon olive">store</i>
+          <i class="material-icons md-18 projectIcon">store</i>
         </b-button>
       </b-col>
     </b-form-row>
@@ -29,16 +29,19 @@ export default {
         'Mehdi Ketabi',
         'coffeeia',
         'merikh',
-        'irCryptoClub'
+        'irCryptoClub',
+        'Mr.Khaas',
+        'tcc',
+        'balast'
       ]
     }
   }
 }
 </script>
 
-<style scoped>
-.projectBut {
-  font-family: Quicksand;
+<style>
+.projectCard {
+  font-family: 'Quicksand', sans-serif;
   border-radius: 3vh;
   font-size: 0.9em;
   background-color: #212121;
@@ -50,15 +53,9 @@ export default {
   padding: 10px;
 }
 
-.projectBut:hover, .projectBut:focus {
-
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #86a82f;
-  box-shadow: 0 9px 4.5px rgba(0,0,0,0.23);
+.projectCard:hover, .projectCard:focus {
+  background-color: #86a82f;
+  box-shadow: 0 9px 9px rgba(0,0,0,0.23);
 }
 
-.projectIcon {
-  float: left;
-}
 </style>
