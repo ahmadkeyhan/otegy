@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   async asyncData (context) {
     const {data} = await context.$axios.get('/api/businesses/industry/' + context.route.params.industry)
     return {

@@ -17,6 +17,8 @@
           <b-nav-item to="/products">محصولات</b-nav-item>
           <b-nav-item to="/projects">پروژه ها</b-nav-item>
           <b-nav-item to="/about">داستان ما</b-nav-item>
+          <b-nav-item to="/user/panel">پنل کاربری</b-nav-item>
+          <b-nav-item v-if="$auth.loggedIn" to="/user/logout"><i class="material-icons md-24 md-light">directions_run</i></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

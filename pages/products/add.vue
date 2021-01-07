@@ -84,6 +84,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   data () {
     return {
       error: null,
